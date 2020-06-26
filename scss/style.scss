@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.logo {
+    font-size: 130px;
+    font-family: IRAN Sans;
+    color: lighten(#000, 30);
+    padding-top: 100px;
+    div {
+        display: flex;
+        align-items: center;
+        img {
+            margin: 20px;
+        }
+    }
+}
+
+.search-input {
+    width: 40%;
+    font-family: Vazir, Roboto;
+    font-size: 20px;
+    outline: 0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: 0;
+    box-shadow: 0 0 2px #000;
+    margin: 30px;
+    margin-bottom: 0;
+    &:focus {
+        box-shadow: 0 0 5px lighten(#000, 30);
+    }
+}
+
+.btn {
+    font-family: Roboto;
+    font-size: 30px;
+    padding: 10px;
+    color: lighten(#000, 30);
+    cursor: pointer;
+    margin: 10px;
+}
+
+#mcursor {
+    position: absolute;
+    transition: all 3s;
+    top: 0;
+    transform: translateX(200px) translateY(200px);
+    left: 0;
+}
+#result {
+    width: 40%;
+    align-self: center;
+    margin-top: 50px;
+    display: none;
+    flex-direction: column;
+    #resultUrl {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center !important;
+        font-weight: bolder;
+        color: lighten(#000, 30);
+    }
+    button {
+        font-family: IRAN Sans;
+        align-self: center;
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFM - اینو برام گوگل کن</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="logo">
+        <div>
+            اینو برام 
+            <img src="images/google.png" alt="Google">
+            کن
+        </div>
+    </div>
+    <input type="text" class="search-input" id="search" autofocus>
+    <button id="searchBtn" onclick="createUrl()" class="btn">Google Search</button>
+
+    <div id="result">
+        <input type="text" readonly id="resultUrl" class="search-input">
+        <button class="btn" onclick="goToUrl()">برو به این لینک</button>
+    </div>
+</body>
+</html>
