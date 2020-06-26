@@ -4,7 +4,7 @@ window.onload = function() {
     searchTxt = queryDict["q"]
     searchTxt = decodeURI(searchTxt);
     if (searchTxt == "" || searchTxt == undefined || searchTxt == "undefined") {
-        window.location.href = "https://google.com";
+        window.location.href = "https://rr8eezz4aa.github.io/GIFM/index.html";
     }
     var mcursor = document.getElementById("mcursor");
     var search = document.getElementById("search");
