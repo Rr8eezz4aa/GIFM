@@ -69,4 +69,47 @@ body {
     font-family: IRAN Sans;
     align-self: center; }
 
+@media only screen and (max-width: 1200px) {
+  .logo {
+    font-size: 100px; }
+    .logo img {
+      width: 350px; }
+
+  .search-input {
+    width: 50%; }
+
+  #result {
+    width: 50%; } }
+@media only screen and (max-width: 800px) {
+  .logo {
+    font-size: 60px; }
+    .logo img {
+      width: 250px; }
+
+  .search-input {
+    width: 60%; }
+
+  #result {
+    width: 60%; }
+
+  .btn {
+    font-size: 20px; } }
+@media only screen and (max-width: 550px) {
+  .logo {
+    font-size: 50px; }
+    .logo img {
+      width: 180px;
+      margin: 10px !important; }
+
+  .search-input {
+    width: 70%; }
+
+  #result {
+    width: 70%; } }
+@media only screen and (max-width: 400px) {
+  .logo {
+    font-size: 40px; }
+    .logo img {
+      width: 140px; } }
+
 /*# sourceMappingURL=style.css.map */
