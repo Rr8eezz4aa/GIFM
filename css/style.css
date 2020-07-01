@@ -24,6 +24,11 @@ body {
     .logo div img {
       margin: 20px; }
 
+#alert .noty_body {
+  font-family: Vazir, Roboto;
+  font-size: 20px;
+  text-align: center; }
+
 .search-input {
   width: 40%;
   font-family: Vazir, Roboto;

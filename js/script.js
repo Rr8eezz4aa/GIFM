@@ -6,6 +6,21 @@ function createUrl() {
         var searchUrl = encodeURI(searchUrl);
         document.getElementById("result").style.display = "flex";
         document.getElementById("resultUrl").value = searchUrl
+        new Noty({
+            text: 'لینک با موفقیت ساخته شد!',
+            type: "success",
+            timeout: 2000,
+            id: "alert",
+            layout: "bottomRight"
+        }).show();
+    } else {
+        new Noty({
+            text: 'جستجو نمی تواند خالی باشد!',
+            type: "error",
+            timeout: 1000,
+            id: "alert",
+            layout: "bottomRight"
+        }).show();
     }
 }
 
