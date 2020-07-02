@@ -75,10 +75,10 @@ body {
 .btn {
     font-family: $roboto;
     font-size: 30px;
-    padding: 10px;
+    padding: 7px;
     color: lighten(#000, 30);
     cursor: pointer;
-    margin: 10px;
+    margin: 10px 5px;
 }
 
 #mcursor {
@@ -100,9 +100,12 @@ body {
         font-weight: bolder;
         color: lighten(#000, 30);
     }
-    button {
-        font-family: $iransans;
-        align-self: center;
+    .buttons {
+        display: flex;
+        justify-content: center;
+        .btn {
+            font-family: $iransans;
+        }
     }
 }
 

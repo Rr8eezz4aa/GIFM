@@ -28,3 +28,17 @@ function goToUrl() {
     var url = document.getElementById("resultUrl").value;
     window.open(url)
 }
+
+function copyText() {
+    var result = document.getElementById("resultUrl");
+    result.select();
+    result.setSelectionRange(0, 99999);
+    document.execCommand("Copy");
+    new Noty({
+        text: 'لینک کپی شد!',
+        type: "success",
+        timeout: 2000,
+        id: "alert",
+        layout: "bottomRight"
+    }).show();
+}
