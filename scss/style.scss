@@ -4,6 +4,28 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "iransans";
+    src: url("../fonts/iransans.ttf");
+}
+@font-face {
+    font-family: "vazircode";
+    src: url("../fonts/vazircode.ttf");
+}
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/roboto.ttf");
+}
+@font-face {
+    font-family: "vazir";
+    src: url("../fonts/vazir.ttf");
+}
+
+$iransans: "iransans", IRAN Sans;
+$vazir: "vazir", Vazir;
+$vazircode: "vazircode", Vazir Code;
+$roboto: "roboto", Roboto;
+
 html,
 body {
     min-height: 100%;
@@ -16,7 +38,7 @@ body {
 }
 .logo {
     font-size: 130px;
-    font-family: IRAN Sans;
+    font-family: $iransans;
     color: lighten(#000, 30);
     padding-top: 100px;
     div {
@@ -29,14 +51,14 @@ body {
 }
 
 #alert .noty_body{
-    font-family: Vazir, Roboto;
+    font-family: $vazircode, $roboto;
     font-size: 20px;
     text-align: center;
 }
 
 .search-input {
     width: 40%;
-    font-family: Vazir, Roboto;
+    font-family: $vazir, $roboto;
     font-size: 20px;
     outline: 0;
     border-radius: 50px;
@@ -51,7 +73,7 @@ body {
 }
 
 .btn {
-    font-family: Roboto;
+    font-family: $roboto;
     font-size: 30px;
     padding: 10px;
     color: lighten(#000, 30);
@@ -63,7 +85,6 @@ body {
     position: absolute;
     transition: all 3s;
     top: 0;
-    transform: translateX(200px) translateY(200px);
     left: 0;
 }
 #result {
@@ -80,7 +101,7 @@ body {
         color: lighten(#000, 30);
     }
     button {
-        font-family: IRAN Sans;
+        font-family: $iransans;
         align-self: center;
     }
 }
@@ -89,7 +110,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Vazir;
+    font-family: $vazircode;
     font-size: 30px;
     background: lighten(#33b5e5, 30);
     border: 3px solid #0099CC;
