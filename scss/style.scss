@@ -85,6 +85,19 @@ body {
     }
 }
 
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Vazir;
+    font-size: 30px;
+    background: lighten(#33b5e5, 30);
+    border: 3px solid #0099CC;
+    padding: 10px;
+    border-radius: 4px;
+    opacity: 0;
+}
+
 .main-footer {
     width: 100%;
     text-align: center;
