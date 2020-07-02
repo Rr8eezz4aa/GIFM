@@ -152,6 +152,7 @@ body {
     }
     .search-input {
         width: 60%;
+        font-size: 15px;
     }
     #result {
         width: 60%;
@@ -191,6 +192,9 @@ body {
         img {
             width: 140px;
         }
+    }
+    .search-input {
+        font-size: 10px;
     }
     #info {
         font-size: 15px;

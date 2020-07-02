@@ -122,7 +122,8 @@ body {
       width: 250px; }
 
   .search-input {
-    width: 60%; }
+    width: 60%;
+    font-size: 15px; }
 
   #result {
     width: 60%; }
@@ -152,6 +153,9 @@ body {
     font-size: 40px; }
     .logo img {
       width: 140px; }
+
+  .search-input {
+    font-size: 10px; }
 
   #info {
     font-size: 15px; } }
