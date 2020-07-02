@@ -143,6 +143,9 @@ body {
             width: 100px;
         }
     }
+    #info {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -167,5 +170,8 @@ body {
         img {
             width: 140px;
         }
+    }
+    #info {
+        font-size: 15px;
     }
 }
