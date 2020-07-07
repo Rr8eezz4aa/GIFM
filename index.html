@@ -6,7 +6,7 @@
     <title>GIFM - اینو برام گوگل کن</title>
     <script src="js/noty.min.js"></script>
     <link rel="stylesheet" href="css/noty.min.css">
-    <script src="js/script.js?v=0.1"></script>
+    <script src="js/script.js?v=0.2"></script>
     <link rel="stylesheet" href="css/style.css?v=0.3">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170957744-1"></script>
@@ -30,7 +30,7 @@
     <button id="searchBtn" onclick="createUrl()" class="btn">Google Search</button>
 
     <div id="result">
-        <input type="text" readonly id="resultUrl" class="search-input">
+        <input type="text" readonly id="resultUrl" class="search-input" onclick="this.select()">
         <div class="buttons">
             <button class="btn" onclick="goToUrl()">برو به این لینک</button>
             <button class="btn" onclick="copyText()">کپی لینک</button>
