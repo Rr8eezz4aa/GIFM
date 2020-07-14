@@ -57,7 +57,7 @@ body {
 
 .btn {
   font-family: "roboto", Roboto;
-  font-size: 30px;
+  font-size: 23px;
   padding: 7px;
   color: #4d4d4d;
   cursor: pointer;
@@ -125,13 +125,15 @@ body {
 
   .search-input {
     width: 60%;
-    font-size: 15px; }
+    font-size: 15px;
+    padding: 7px 14px; }
 
   #result {
     width: 60%; }
 
   .btn {
-    font-size: 20px; }
+    font-size: 18px;
+    padding: 4px; }
 
   .main-footer img {
     width: 100px; }
