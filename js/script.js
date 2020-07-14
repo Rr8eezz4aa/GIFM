@@ -9,15 +9,15 @@ window.onload = function() {
 }
 
 function createUrl() {
-    document.getElementById("result").style.display = "none";
-    document.getElementById("shortLinkBtn").disabled = false;
-    var search = document.getElementById("search");
+    $("#result").fadeOut();
+    $("#shortLinkBtn").prop("disabled", false);
+    var search = $("#search")[0];
     var searchTxt = search.value;
     if (searchTxt) {
         var searchUrl = "https://rr8eezz4aa.github.io/GIFM/go.html?q=" + searchTxt;
         var searchUrl = encodeURI(searchUrl);
-        document.getElementById("result").style.display = "flex";
-        document.getElementById("resultUrl").value = searchUrl;
+        $("#result").fadeIn();
+        $("#resultUrl")[0].value = searchUrl;
         new Noty({
             text: 'لینک با موفقیت ساخته شد!',
             type: "success",
@@ -37,7 +37,7 @@ function createUrl() {
 }
 
 function goToUrl() {
-    var url = document.getElementById("resultUrl").value;
+    var url = $("#resultUrl")[0].value;
     window.open(url);
 }
 
@@ -56,7 +56,7 @@ function copyText() {
 }
 
 function shortLink() {
-    var long = document.getElementById("resultUrl").value;
+    var long = $("#resultUrl")[0].value;
     long = long.split("%20").join("^");
     var url = "https://is.gd/create.php?format=json&url="+long;
     $.ajax({
@@ -64,8 +64,8 @@ function shortLink() {
         url: url,
         dataType: 'jsonp',
         success: function(r) {
-            document.getElementById("resultUrl").value = r["shorturl"];
-            document.getElementById("shortLinkBtn").disabled = true;
+            $("#resultUrl")[0].value = r["shorturl"];
+            $("#shortLinkBtn").prop("disabled", true);
             new Noty({
                 text: 'لینک کوتاه ساخته شد!',
                 type: "success",
