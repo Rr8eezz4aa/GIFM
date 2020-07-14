@@ -16,6 +16,7 @@ window.onload = function() {
     var queryDict = {};
     location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
     searchTxt = queryDict["q"]
+    searchTxt = searchTxt.split("^").join("%20");
     searchTxt = decodeURI(searchTxt);
     if (searchTxt == "" || searchTxt == undefined || searchTxt == "undefined") {
         window.location.href = "https://rr8eezz4aa.github.io/GIFM/index.html";

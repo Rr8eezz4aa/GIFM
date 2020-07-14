@@ -10,6 +10,7 @@ window.onload = function() {
 
 function createUrl() {
     document.getElementById("result").style.display = "none";
+    document.getElementById("shortLinkBtn").disabled = false;
     var search = document.getElementById("search");
     var searchTxt = search.value;
     if (searchTxt) {
@@ -52,4 +53,26 @@ function copyText() {
         id: "alert",
         layout: "bottomRight"
     }).show();
+}
+
+function shortLink() {
+    var long = document.getElementById("resultUrl").value;
+    long = long.split("%20").join("^");
+    var url = "https://is.gd/create.php?format=simple&url="+long;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("resultUrl").value = xhr.response;
+            document.getElementById("shortLinkBtn").disabled = true;
+            new Noty({
+                text: 'لینک کوتاه ساخته شد!',
+                type: "success",
+                timeout: 1000,
+                id: "alert",
+                layout: "bottomRight"
+            }).show();
+        }
+    }
+    xhr.open("GET", url);
+    xhr.send();
 }
