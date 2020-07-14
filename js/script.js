@@ -58,7 +58,7 @@ function copyText() {
 function shortLink() {
     var long = document.getElementById("resultUrl").value;
     long = long.split("%20").join("^");
-    var url = "https://is.gd/create.php?format=simple&url="+long;
+    var url = "https://thingproxy.freeboard.io/fetch/https://is.gd/create.php?format=simple&url="+long;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() { 
         if (xhr.readyState == 4 && xhr.status == 200) {
