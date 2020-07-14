@@ -151,7 +151,10 @@ body {
     width: 70%; }
 
   #result {
-    width: 70%; } }
+    width: 70%; }
+
+  .btn {
+    font-size: 17px; } }
 @media only screen and (max-width: 400px) {
   .logo {
     font-size: 40px; }
@@ -162,6 +165,14 @@ body {
     font-size: 10px; }
 
   #info {
-    font-size: 15px; } }
+    font-size: 15px; }
+
+  .btn {
+    font-size: 15px;
+    padding: 2px;
+    margin: 7px 3px; } }
+@media only screen and (max-width: 335px) {
+  .btn {
+    font-size: 13px; } }
 
 /*# sourceMappingURL=style.css.map */
