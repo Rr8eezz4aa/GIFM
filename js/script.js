@@ -58,11 +58,13 @@ function copyText() {
 function shortLink() {
     var long = document.getElementById("resultUrl").value;
     long = long.split("%20").join("^");
-    var url = "https://is.gd/create.php?format=simple&url="+long;
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() { 
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById("resultUrl").value = xhr.response;
+    var url = "https://is.gd/create.php?format=json&url="+long;
+    $.ajax({
+        method: 'GET',
+        url: url,
+        dataType: 'jsonp',
+        success: function(r) {
+            document.getElementById("resultUrl").value = r["shorturl"];
             document.getElementById("shortLinkBtn").disabled = true;
             new Noty({
                 text: 'لینک کوتاه ساخته شد!',
@@ -72,7 +74,5 @@ function shortLink() {
                 layout: "bottomRight"
             }).show();
         }
-    }
-    xhr.open("GET", url);
-    xhr.send();
+    })
 }
