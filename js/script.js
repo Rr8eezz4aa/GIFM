@@ -3,36 +3,22 @@ window.onload = function() {
     input.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
             event.preventDefault();    
-        document.getElementById("searchBtn").click();
+            document.getElementById("searchBtn").click();
         }
     });
 }
 
 function createUrl() {
-    $("#result").fadeOut();
+    $("#result").fadeOut(50);
     $("#shortLinkBtn").prop("disabled", false);
     var search = $("#search")[0];
     var searchTxt = search.value;
     if (searchTxt) {
         var searchUrl = "https://rr8eezz4aa.github.io/GIFM/go.html?q=" + searchTxt;
         var searchUrl = encodeURI(searchUrl);
-        $("#result").fadeIn();
+        $("#result").fadeIn(50);
         $("#resultUrl")[0].value = searchUrl;
-        new Noty({
-            text: 'لینک با موفقیت ساخته شد!',
-            type: "success",
-            timeout: 2000,
-            id: "alert",
-            layout: "bottomRight"
-        }).show();
-    } else {
-        new Noty({
-            text: 'جستجو نمی تواند خالی باشد!',
-            type: "error",
-            timeout: 1000,
-            id: "alert",
-            layout: "bottomRight"
-        }).show();
+        showMsg('لینک با موفقیت ساخته شد!', "success");
     }
 }
 
@@ -46,13 +32,7 @@ function copyText() {
     result.select();
     result.setSelectionRange(0, 99999);
     document.execCommand("Copy");
-    new Noty({
-        text: 'لینک کپی شد!',
-        type: "success",
-        timeout: 2000,
-        id: "alert",
-        layout: "bottomRight"
-    }).show();
+    showMsg('لینک کپی شد!', "success");
 }
 
 function shortLink() {
@@ -66,13 +46,17 @@ function shortLink() {
         success: function(r) {
             $("#resultUrl")[0].value = r["shorturl"];
             $("#shortLinkBtn").prop("disabled", true);
-            new Noty({
-                text: 'لینک کوتاه ساخته شد!',
-                type: "success",
-                timeout: 1000,
-                id: "alert",
-                layout: "bottomRight"
-            }).show();
+            showMsg('لینک کوتاه ساخته شد!', 'success');
         }
     })
+}
+
+function showMsg(msg, type, timeout=2000) {
+    new Noty({
+        text: msg,
+        type: type,
+        timeout: timeout,
+        id: "alert",
+        layout: "bottomRight"
+    }).show();
 }
