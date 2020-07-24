@@ -223,6 +223,15 @@ body {
     .search-input, .suggests-container {
         width: 70%;
     }
+    .suggests-container {
+        font-size: 13px;
+        li {
+            padding: 0;
+            i {
+                padding: 0;
+            }
+        }
+    }
     #result {
         width: 70%;
     }
