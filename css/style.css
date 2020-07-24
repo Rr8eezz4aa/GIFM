@@ -55,6 +55,34 @@ body {
   .search-input:focus {
     box-shadow: 0 0 5px #4d4d4d; }
 
+.suggests-container {
+  width: 40%;
+  font-family: "roboto", Roboto, "vazir", Vazir;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 1px 4px rgba(33, 33, 33, 0.2); }
+
+#suggests {
+  width: 100%;
+  border-radius: inherit;
+  overflow: hidden; }
+  #suggests li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 5px;
+    cursor: pointer; }
+    #suggests li b {
+      margin-right: 2px; }
+    #suggests li i {
+      padding: 10px;
+      color: #545454;
+      transition: all 0.2s ease; }
+    #suggests li:hover {
+      background: #eee; }
+      #suggests li:hover i {
+        color: #222; }
+
 .btn {
   font-family: "roboto", Roboto;
   font-size: 23px;
@@ -112,7 +140,7 @@ body {
     .logo img {
       width: 350px; }
 
-  .search-input {
+  .search-input, .suggests-container {
     width: 50%; }
 
   #result {
@@ -127,6 +155,9 @@ body {
     width: 60%;
     font-size: 15px;
     padding: 7px 14px; }
+
+  .suggests-container {
+    width: 60%; }
 
   #result {
     width: 60%; }
@@ -147,7 +178,7 @@ body {
       width: 180px;
       margin: 10px !important; }
 
-  .search-input {
+  .search-input, .suggests-container {
     width: 70%; }
 
   #result {

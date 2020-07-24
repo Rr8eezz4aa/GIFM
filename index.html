@@ -9,6 +9,7 @@
     <script src="js/script.js?v=0.5"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css?v=0.4">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170957744-1"></script>
     <script>
@@ -26,7 +27,8 @@
             کن
         </div>
     </div>
-    <input type="search" class="search-input" id="search" autofocus>
+    <input type="search" class="search-input" id="search" autofocus oninput="getSuggests()">
+    <div class="suggests-container"><ul id="suggests"></ul></div>
     <button id="searchBtn" onclick="createUrl()" class="btn">Google Search</button>
 
     <div id="result">

@@ -6,9 +6,18 @@ window.onload = function() {
             document.getElementById("searchBtn").click();
         }
     });
+    input.addEventListener("focus", function() {
+        getSuggests();
+    })
+    input.addEventListener("blur", function() {
+        setTimeout(() => {
+            $("#suggests").empty();
+        }, 100);
+    })
 }
 
 function createUrl() {
+    $("#suggests").empty();
     $("#result").fadeOut(50);
     $("#shortLinkBtn").prop("disabled", false);
     var search = $("#search")[0];
@@ -47,6 +56,34 @@ function shortLink() {
             $("#resultUrl")[0].value = r["shorturl"];
             $("#shortLinkBtn").prop("disabled", true);
             showMsg('لینک کوتاه ساخته شد!', 'success');
+        }
+    })
+}
+
+function getSuggests() {    
+    var query = $("#search")[0].value;
+    if (!query) {$("#suggests").empty();return}
+    var url = "https://www.google.com/complete/search?client=psy-ab&xssi=&output=json&_=33606278&q="+query;
+    $.ajax({
+        method: 'GET',
+        url: url,
+        dataType: 'jsonp',
+        success: function(r) {
+            $("#suggests").empty()
+            r[1].slice(0,5).forEach(function(s){
+                var el = document.createElement("li");
+                el.id = "suggest";
+                el.onclick = function(e){
+                    var el = e.path.length == 7 ? e.path[0] : e.path[1];                    
+                    el = $(el).clone();
+                    el.children("i").remove();
+                    $("#search")[0].value = el[0].innerText;
+                    createUrl();
+                }
+                el.innerHTML = '<i class="material-icons">search</i>'+s[0];
+                $("#suggests").append(el);
+                if (!$("#search")[0].value) {$("#suggests").empty();}
+            })
         }
     })
 }
