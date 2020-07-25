@@ -50,7 +50,7 @@ function copyText() {
 function shortLink() {
     var long = $("#resultUrl")[0].value;
     long = long.split("%20").join("^");
-    var url = "https://is.gd/create.php?format=json&url="+long;
+    var url = "https://is.gd/create.php?format=json&url="+escape(long);
     $.ajax({
         method: 'GET',
         url: url,
