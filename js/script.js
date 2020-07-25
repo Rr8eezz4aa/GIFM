@@ -16,7 +16,7 @@ window.onload = function() {
     })
 }
 
-function createUrl() {
+function createUrl(l=0) {
     $("#suggests").empty();
     $("#result").fadeOut(50);
     $("#shortLinkBtn").prop("disabled", false);
@@ -24,6 +24,9 @@ function createUrl() {
     var searchTxt = search.value;
     if (searchTxt) {
         var searchUrl = "https://rr8eezz4aa.github.io/GIFM/go.html?q=" + searchTxt;
+        if (l) {
+            searchUrl += "&l=1";
+        }
         var searchUrl = encodeURI(searchUrl);
         $("#result").fadeIn(50);
         $("#resultUrl")[0].value = searchUrl;

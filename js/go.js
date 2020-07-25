@@ -1,8 +1,8 @@
-steps = [
+var steps = [
     "1- مرورگر خود را باز کنید.",
     "2- سوالتان را در قسمت جستجو بنویسید.",
     "3- روی جستجو کلیک کنید."
-]
+];
 
 function setStep(i) {
     var info = document.getElementById("info");
@@ -15,15 +15,22 @@ window.onload = function() {
     setStep(1);
     var queryDict = {};
     location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
-    searchTxt = queryDict["q"]
+    var searchTxt = queryDict["q"]
+    var lucky = queryDict["l"];
     searchTxt = searchTxt.split("^").join("%20");
     searchTxt = decodeURI(searchTxt);
     if (searchTxt == "" || searchTxt == undefined || searchTxt == "undefined") {
         window.location.href = "https://rr8eezz4aa.github.io/GIFM/index.html";
     }
+    var searchURL = "https://google.com/search?q="+searchTxt;
+    if (lucky) {
+        searchURL += "&btnI=I"
+        var sbtn = document.getElementById("searchBtnI");
+    } else {
+        var sbtn = document.getElementById("searchBtn");
+    }
     var mcursor = document.getElementById("mcursor");
     var search = document.getElementById("search");
-    var sbtn = document.getElementById("searchBtn");
     var tY = (search.offsetHeight/2 + search.offsetTop - 12) + "px";
     var tX = (search.offsetWidth/2 + search.offsetLeft) + "px";
     var trans = "translateY("+tY+")"+" translateX("+tX+")";
@@ -43,7 +50,7 @@ window.onload = function() {
                 mcursor.style.transform = trans;
                 setTimeout(() => {
                     sbtn.style.border = "1px solid #000";
-                    window.location.href = "https://google.com/search?q="+searchTxt;
+                    window.location.href = searchURL;
                 }, 3000);
             }
             search.value += searchTxt.charAt(i)
