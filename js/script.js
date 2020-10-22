@@ -1,9 +1,10 @@
 window.onload = function() {
-    var input = document.getElementById("search");
+    var input = document.getElementById("search");    
+    input.value = "";
     input.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
             event.preventDefault();    
-            document.getElementById("searchBtn").click();
+            createUrl();
         }
     });
     input.addEventListener("focus", function() {
@@ -24,7 +25,7 @@ function createUrl(l=0) {
     var searchTxt = search.value;
     if (searchTxt) {
         var searchUrl = "https://rr8eezz4aa.github.io/GIFM/go.html?q=" + searchTxt;
-        if (l) {
+        if (l==1) {
             searchUrl += "&l=1";
         }
         var searchUrl = encodeURI(searchUrl);
@@ -59,8 +60,11 @@ function shortLink() {
             $("#resultUrl")[0].value = r["shorturl"];
             $("#shortLinkBtn").prop("disabled", true);
             showMsg('لینک کوتاه ساخته شد!', 'success');
+        },
+        error: function(xhr, status, error) {
+            showMsg("متاسفانه مشکلی پیش آمده است!", "error");
         }
-    })
+    });
 }
 
 function getSuggests() {    
@@ -76,8 +80,9 @@ function getSuggests() {
             r[1].slice(0,5).forEach(function(s){
                 var el = document.createElement("li");
                 el.id = "suggest";
-                el.onclick = function(e){
-                    var el = e.path.length == 7 ? e.path[0] : e.path[1];                    
+                el.onclick = function(e) {
+                    var path = e.path || (e.composedPath && e.composedPath());
+                    var el = path.length == 7 ? path[0] : path[1];
                     el = $(el).clone();
                     el.children("i").remove();
                     $("#search")[0].value = el[0].innerText;
