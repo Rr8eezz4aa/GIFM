@@ -20,7 +20,7 @@ window.onload = function() {
     searchTxt = searchTxt.split("^").join("%20");
     searchTxt = decodeURI(searchTxt);
     if (searchTxt == "" || searchTxt == undefined || searchTxt == "undefined") {
-        window.location.href = "https://rr8eezz4aa.github.io/GIFM/index.html";
+        window.location.href = "https://R3z4Pr0gramm3r.github.io/GIFM/index.html";
     }
     var searchURL = "https://google.com/search?q="+searchTxt;
     if (lucky) {
