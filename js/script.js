@@ -24,7 +24,7 @@ function createUrl(l=0) {
     var search = $("#search")[0];
     var searchTxt = search.value;
     if (searchTxt) {
-        var searchUrl = "https://rr8eezz4aa.github.io/GIFM/go.html?q=" + searchTxt;
+        var searchUrl = "https://R3z4Pr0gramm3r.github.io/GIFM/go.html?q=" + searchTxt;
         if (l==1) {
             searchUrl += "&l=1";
         }
